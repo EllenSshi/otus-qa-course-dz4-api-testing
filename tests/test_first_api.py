@@ -1,6 +1,6 @@
 import pytest
-import requests
 from apiclient.api_client import APIClient
+from jsonschema import validate
 
 
 base_url = 'https://dog.ceo/api/'
@@ -28,4 +28,28 @@ def test_search_images_by_breed(breed_name, expected_status_code, expected_statu
     assert resp.json()['status'] == expected_status_text
 
 
-def test_
+@pytest.mark.parametrize("breed, subbreed_existence",
+                         [('husky', False), ('labrador', False), ('retriever', True)])
+def test_subbreed_list(breed, subbreed_existence):
+    resp = api_client.get(f'breed/{breed}/list')
+    assert bool(resp.json()['message']) is subbreed_existence
+
+
+def test_breeds_list_response_time():
+    """
+    Проверка, что время ответа на запрос списка всех пород не превышает 0.5 секунды.
+    """
+    resp = api_client.get('breeds/list/all')
+    assert resp.elapsed.microseconds < 500000
+
+
+def test_random_image_jsonschema_validation():
+    resp = api_client.get('breeds/image/random')
+    schema = {
+        'type': 'object',
+        'properties': {
+            'message': {'type': 'string'},
+            'status': {'type': 'string'}
+        }
+    }
+    validate(instance=resp.json(), schema=schema)
