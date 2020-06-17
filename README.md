@@ -1,3 +1,7 @@
+# dz24 Jenkins
+1) Создан Dockerfile для сборки образа с тестами.
+2) Создан Jenkinsfile для запуска Pipeline в Jenkins.
+
 # otus-qa-course-dz4-api-testing
 
 1) Запустить все тесты: 
