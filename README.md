@@ -1,3 +1,5 @@
+# dz25 Wheel package
+
 # dz28 Mock
 Результат в папке mock_tests
 1) Модуль constants.py содержит url api-сервиса
