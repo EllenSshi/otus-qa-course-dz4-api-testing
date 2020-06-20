@@ -1,4 +1,8 @@
 # dz25 Wheel package
+1) Собрать wheel-пакет можно командой $ python setup.py bdist_wheel. 
+Установить: pip install dist/api_tests_lib-1.0.2-py3-none-any.whl
+2) Опубликовать пакет на https://test.pypi.org/ можно командой python3 -m twine upload --repository testpypi dist/*.
+Установить: pip install -i https://test.pypi.org/simple/ api-tests-lib
 
 # dz28 Mock
 Результат в папке mock_tests

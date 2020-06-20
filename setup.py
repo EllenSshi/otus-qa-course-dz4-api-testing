@@ -1,14 +1,14 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
-    name="twpack",
-    version="1.0.7",
+    name="api_tests_lib",
+    version="1.0.2",
     url="https://github.com/EllenSshi/otus-qa-course-dz4-api-testing",
     author="Alyona Shishkina",
     author_email="author@example.com",
     description="Test package wheel",
-    packages=find_packages(),
+    packages=['api_tests_lib', 'api_tests_lib.apiclient', 'api_tests_lib.tests'],
     long_description=open('README.md').read(),
     install_requires=["pytest>=5.3.2", "requests>=2.22.0", "jsonschema>=3.2.0"],
     classifiers=[
