@@ -1,3 +1,5 @@
+# ololo
+
 # dz25 Wheel package
 1) Собрать wheel-пакет можно командой $ python setup.py bdist_wheel. 
 Установить: pip install dist/api_tests_lib-1.0.2-py3-none-any.whl
