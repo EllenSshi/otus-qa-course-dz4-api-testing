@@ -1,4 +1,4 @@
-# ololo
+# olo11lo
 
 # dz25 Wheel package
 1) Собрать wheel-пакет можно командой $ python setup.py bdist_wheel. 
